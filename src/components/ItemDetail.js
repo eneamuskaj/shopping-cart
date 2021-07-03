@@ -1,48 +1,28 @@
 import React, { useState, useEffect } from 'react'
 
-const Item = (match) => {
+function Item(props) {
   useEffect(() => {
-    fetchItem()
+    props.fetchItem(props.location.pathname)
+    console.log(props.location.pathname)
   }, [])
 
-  const [item, setItem] = useState({
-    sprites: { front_default: '' },
-    base_experiece: 0,
-  })
-  const [cartItems, setCartItems] = useState(0)
-
-  const fetchItem = async () => {
-    const fetchItem = await fetch(
-      `http://pokeapi.co/api/v2/pokemon/${match.match.params.id}`
-    )
-    const item = await fetchItem.json()
-    console.log(item)
-    setItem(item)
-  }
-
-  const handleClick = () => {
-    console.log('clicked')
-  }
-  const handleChange = (event) => {
-    setCartItems(event.target.value)
-  }
   return (
     <div>
-      <h1>{item.name}</h1>
-      <img src={item.sprites.front_default} alt="def" />
-      <h2>Price: $ {item.base_experience}</h2>
+      <h1>{props.item.name}</h1>
+      <img src={props.item.sprites.front_default} alt="def" />
+      <h2>Price: $ {props.item.base_experience}</h2>
       <form>
         <input
-          value={cartItems}
+          value={props.cartItems}
           type="text"
           placeholder="Input the number of items"
-          onChange={handleChange}
+          onChange={props.handleChange}
         />
-        <button onClick={handleClick} type="button">
+        <button onClick={props.handleClick} type="button">
           Add to Cart
         </button>
       </form>
-      <p>You currently have {cartItems} in cart</p>
+      <p>You currently have {props.cartItems} in cart</p>
     </div>
   )
 }
