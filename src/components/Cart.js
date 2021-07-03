@@ -1,5 +1,5 @@
 const Cart = () => {
-  return <div>This is the cart</div>
+  return <div>You currently have {} items in cart</div>
 }
 
 export default Cart

@@ -11,7 +11,7 @@ const App = () => {
       <Router>
         <Nav />
         <Switch>
-          <Route path="/Homepage" exact component={Homepage} />
+          <Route path="/" exact component={Homepage} />
           <Route path="/Cart" exact component={Cart} />
           <Route path="/:id" exact component={ItemDetail} />
         </Switch>
