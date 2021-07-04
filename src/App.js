@@ -7,7 +7,15 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Item from './components/ItemDetail'
 
 const App = () => {
+  // state
   const [items, setItems] = useState([])
+  const [cartItems, setCartItems] = useState()
+  const [cartPrice, setCartPrice] = useState([])
+  const [cartItemsTotal, setCartItemsTotal] = useState([])
+  const [item, setItem] = useState({
+    sprites: { front_default: '' },
+    base_experiece: 0,
+  })
 
   const fetchItems = async () => {
     const data = await fetch('http://pokeapi.co/api/v2/pokemon/')
@@ -15,12 +23,6 @@ const App = () => {
     console.log(items.results)
     setItems(items.results)
   }
-
-  const [item, setItem] = useState({
-    sprites: { front_default: '' },
-    base_experiece: 0,
-  })
-  const [cartItems, setCartItems] = useState(0)
 
   const fetchItem = async (id) => {
     const fetchItem = await fetch(`http://pokeapi.co/api/v2/pokemon${id}`)
@@ -30,13 +32,22 @@ const App = () => {
     console.log(id)
   }
 
-  // function fetchItem(id) {
-  //   console.log(id)
-  // }
-
   const handleClick = () => {
-    console.log('clicked')
+    const cartItemsData = cartItemsTotal
+    const price = cartPrice
+    let i = 0
+    while (i < cartItems) {
+      cartItemsData.push(item.name)
+      price.push(item.base_experience)
+      i++
+    }
+    setCartItemsTotal(cartItemsData)
+    setCartPrice(price)
+
+    console.log(cartItemsTotal)
+    console.log(cartPrice)
   }
+
   const handleChange = (event) => {
     setCartItems(event.target.value)
   }
@@ -54,7 +65,7 @@ const App = () => {
             />
           </Route>
           <Route path="/Cart" exact>
-            <Cart />
+            <Cart cartPrice={cartPrice} cartItemsTotal={cartItemsTotal} />
           </Route>
           <Route
             path="/:id"
@@ -72,16 +83,6 @@ const App = () => {
               />
             )}
           />
-          {/* <ItemDetail
-              item={item}
-              setItem={setItem}
-              cartItems={cartItems}
-              setCartItems={setCartItems}
-              // fetchItem={fetchItem}
-              handleClick={handleClick}
-              handleChange={handleChange}
-            />
-          </Route> */}
         </Switch>
       </Router>
     </div>

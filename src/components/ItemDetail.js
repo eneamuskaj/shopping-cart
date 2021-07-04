@@ -22,7 +22,11 @@ function Item(props) {
           Add to Cart
         </button>
       </form>
-      <p>You currently have {props.cartItems} in cart</p>
+      <p>
+        You currently have {props.cartItems} items * ${' '}
+        {props.item.base_experience} each = ${' '}
+        {props.cartItems * props.item.base_experience} total.
+      </p>
     </div>
   )
 }
