@@ -4,12 +4,11 @@ import Cart from './components/Cart'
 import Nav from './components/Nav'
 import ItemDetail from './components/ItemDetail'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Item from './components/ItemDetail'
 
 const App = () => {
   // state
   const [items, setItems] = useState([])
-  const [cartItems, setCartItems] = useState()
+  const [cartItems, setCartItems] = useState(0)
   const [cartPrice, setCartPrice] = useState([])
   const [cartItemsTotal, setCartItemsTotal] = useState([])
   const [item, setItem] = useState({
@@ -20,16 +19,14 @@ const App = () => {
   const fetchItems = async () => {
     const data = await fetch('http://pokeapi.co/api/v2/pokemon/')
     const items = await data.json()
-    console.log(items.results)
     setItems(items.results)
   }
 
   const fetchItem = async (id) => {
     const fetchItem = await fetch(`http://pokeapi.co/api/v2/pokemon${id}`)
     const item = await fetchItem.json()
-    console.log(item)
+
     setItem(item)
-    console.log(id)
   }
 
   const handleClick = () => {
@@ -43,9 +40,6 @@ const App = () => {
     }
     setCartItemsTotal(cartItemsData)
     setCartPrice(price)
-
-    console.log(cartItemsTotal)
-    console.log(cartPrice)
   }
 
   const handleChange = (event) => {
