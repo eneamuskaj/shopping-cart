@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 function Item(props) {
   useEffect(() => {
     props.fetchItem(props.location.pathname)
-    console.log(props.location.pathname)
-  }, [])
+  })
 
   return (
     <div>
       <h1>{props.item.name}</h1>
       <img src={props.item.sprites.front_default} alt="def" />
+      <img src={props.item.sprites.back_default} alt="def" />
+      <img src={props.item.sprites.back_shiny} alt="def" />
+      <img src={props.item.sprites.front_shiny} alt="def" />
       <h2>Price: $ {props.item.base_experience}</h2>
       <form>
         <input
