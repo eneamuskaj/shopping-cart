@@ -1,0 +1,86 @@
+body {
+  background-color: black;
+}
+.App {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: rgb(75, 75, 75);
+  color: white;
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+.container {
+  display: grid;
+
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+}
+.containerChild {
+  border: solid rgba(168, 50, 50, 0.541) 3px;
+  border-radius: 30px;
+  padding: 10px;
+}
+a:-webkit-any-link {
+  color: rgb(173, 133, 0);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h3 {
+  color: coral;
+  font-family: 'Encode Sans SC', sans-serif;
+}
+
+li {
+  color: coral;
+  font-family: 'Encode Sans SC', sans-serif;
+}
+
+a {
+  font-family: 'Encode Sans SC', sans-serif;
+  color: rgb(173, 133, 0);
+}
+
+p {
+  font-family: 'Encode Sans SC', sans-serif;
+  color: rgb(173, 133, 0);
+}
+.cartItems {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+}
+
+input[type="text"], textarea {
+
+  background-color : rgb(173, 133, 0); 
+  border: none;
+  padding: 10px 10px;
+  font-size: 16px;
+
+}
+
+button {
+  background-color: rgba(168, 50, 50, 0.541);
+
+  border: none;
+  color: coral;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
