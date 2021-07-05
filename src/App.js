@@ -17,13 +17,13 @@ const App = () => {
   })
 
   const fetchItems = async () => {
-    const data = await fetch('http://pokeapi.co/api/v2/pokemon/')
+    const data = await fetch('https://pokeapi.co/api/v2/pokemon/')
     const items = await data.json()
     setItems(items.results)
   }
 
   const fetchItem = async (id) => {
-    const fetchItem = await fetch(`http://pokeapi.co/api/v2/pokemon${id}`)
+    const fetchItem = await fetch(`https://pokeapi.co/api/v2/pokemon${id}`)
     const item = await fetchItem.json()
 
     setItem(item)
