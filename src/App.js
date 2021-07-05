@@ -3,11 +3,7 @@ import Homepage from './components/Homepage'
 import Cart from './components/Cart'
 import Nav from './components/Nav'
 import ItemDetail from './components/ItemDetail'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 const App = () => {
   // state
@@ -51,39 +47,39 @@ const App = () => {
   }
 
   return (
-      <div className="App">
-        <Router>
-          <Nav />
-          <Switch>
-            <Route path="/" exact>
-              <Homepage
-                fetchItems={fetchItems}
-                items={items}
-                setItems={setItems}
-              />
-            </Route>
-            <Route path="/Cart" exact>
-              <Cart cartPrice={cartPrice} cartItemsTotal={cartItemsTotal} />
-            </Route>
-            <Route
-              path="/:id"
-              exact
-              render={(props) => (
-                <ItemDetail
-                  {...props}
-                  item={item}
-                  setItem={setItem}
-                  cartItems={cartItems}
-                  setCartItems={setCartItems}
-                  handleClick={handleClick}
-                  handleChange={handleChange}
-                  fetchItem={fetchItem}
-                />
-              )}
+    <div className="App">
+      <Router basename={process.env.PUBLIC_URL}>
+        <Nav />
+        <Switch>
+          <Route path="/" exact>
+            <Homepage
+              fetchItems={fetchItems}
+              items={items}
+              setItems={setItems}
             />
-          </Switch>
-        </Router>
-      </div>
+          </Route>
+          <Route path="/Cart" exact>
+            <Cart cartPrice={cartPrice} cartItemsTotal={cartItemsTotal} />
+          </Route>
+          <Route
+            path="/:id"
+            exact
+            render={(props) => (
+              <ItemDetail
+                {...props}
+                item={item}
+                setItem={setItem}
+                cartItems={cartItems}
+                setCartItems={setCartItems}
+                handleClick={handleClick}
+                handleChange={handleChange}
+                fetchItem={fetchItem}
+              />
+            )}
+          />
+        </Switch>
+      </Router>
+    </div>
   )
 }
 
