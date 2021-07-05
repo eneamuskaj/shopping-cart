@@ -6,8 +6,7 @@ import ItemDetail from './components/ItemDetail'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  HashRouter,
+  Route
 } from 'react-router-dom'
 
 const App = () => {
@@ -52,7 +51,6 @@ const App = () => {
   }
 
   return (
-    <HashRouter basename="/">
       <div className="App">
         <Router>
           <Nav />
@@ -86,7 +84,6 @@ const App = () => {
           </Switch>
         </Router>
       </div>
-    </HashRouter>
   )
 }
 
