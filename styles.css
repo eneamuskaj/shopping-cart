@@ -39,7 +39,8 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
-h3 {
+h3,
+h2 {
   color: coral;
   font-family: 'Encode Sans SC', sans-serif;
 }
@@ -64,13 +65,12 @@ p {
   grid-template-rows: auto auto auto auto;
 }
 
-input[type="text"], textarea {
-
-  background-color : rgb(173, 133, 0); 
+input[type='text'],
+textarea {
+  background-color: rgb(173, 133, 0);
   border: none;
   padding: 10px 10px;
   font-size: 16px;
-
 }
 
 button {
