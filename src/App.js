@@ -4,6 +4,7 @@ import Cart from './components/Cart'
 import Nav from './components/Nav'
 import ItemDetail from './components/ItemDetail'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import './styles.css';
 
 const App = () => {
   // state

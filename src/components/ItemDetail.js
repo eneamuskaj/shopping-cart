@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 
 function Item(props) {
   useEffect(() => {
-    props.fetchItem(props.location.pathname)
-  })
+    props.fetchItem(props.location.pathname);
+  });
 
   return (
-    <div>
+    <div className="item-detail">
       <h1>{props.item.name}</h1>
       <img src={props.item.sprites.front_default} alt="def" />
       <img src={props.item.sprites.back_default} alt="def" />
@@ -25,12 +25,12 @@ function Item(props) {
         </button>
       </form>
       <p>
-        You currently have {props.cartItems} items * ${' '}
-        {props.item.base_experience} each = ${' '}
+        You currently have {props.cartItems} items * ${" "}
+        {props.item.base_experience} each = ${" "}
         {props.cartItems * props.item.base_experience} total.
       </p>
     </div>
-  )
+  );
 }
 
-export default Item
+export default Item;

@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import pokemon from "../pokemon.png";
 const Nav = () => {
   const navStyle = {
-    color: 'white',
-  }
+    color: "white",
+  };
   return (
     <nav>
-      <h3>Logo</h3>
+      <img src={pokemon} alt="pokemon logo" />
       <ul className="nav-links">
         <Link style={navStyle} to="/">
           <li>Homepage</li>
@@ -15,7 +16,7 @@ const Nav = () => {
         </Link>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
