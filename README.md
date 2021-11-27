@@ -1,3 +1,3 @@
-# Pokemon Shopping App made with React
+# Pokemon Shopping - React App
 
 Live Version: https://eneamuskaj.github.io/shopping-cart/
