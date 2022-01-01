@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.js": "/shopping-cart/static/js/main.c592782a.chunk.js",
-    "main.js.map": "/shopping-cart/static/js/main.c592782a.chunk.js.map",
+    "main.css": "/shopping-cart/static/css/main.2f4fd02d.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.50eef67a.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.50eef67a.chunk.js.map",
     "runtime-main.js": "/shopping-cart/static/js/runtime-main.e2f9aa8b.js",
     "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.e2f9aa8b.js.map",
     "static/js/2.2424cfdb.chunk.js": "/shopping-cart/static/js/2.2424cfdb.chunk.js",
     "static/js/2.2424cfdb.chunk.js.map": "/shopping-cart/static/js/2.2424cfdb.chunk.js.map",
     "index.html": "/shopping-cart/index.html",
-    "static/js/2.2424cfdb.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.2424cfdb.chunk.js.LICENSE.txt"
+    "static/css/main.2f4fd02d.chunk.css.map": "/shopping-cart/static/css/main.2f4fd02d.chunk.css.map",
+    "static/js/2.2424cfdb.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.2424cfdb.chunk.js.LICENSE.txt",
+    "static/media/pokemon.8ae2ebe4.png": "/shopping-cart/static/media/pokemon.8ae2ebe4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.e2f9aa8b.js",
     "static/js/2.2424cfdb.chunk.js",
-    "static/js/main.c592782a.chunk.js"
+    "static/css/main.2f4fd02d.chunk.css",
+    "static/js/main.50eef67a.chunk.js"
   ]
 }
